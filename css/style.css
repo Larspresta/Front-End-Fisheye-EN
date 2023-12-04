@@ -3,6 +3,12 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    max-width: 1440px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none
 }
 
 
@@ -31,6 +37,7 @@ h1 {
     margin-top: 100px;
 }
 
+
 .photographer_section article {
     justify-self: center;
     display: flex;
@@ -39,12 +46,41 @@ h1 {
     flex-direction: column;
 }
 
+.photographer_section article a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photographer_section article a:hover {
+    filter: drop-shadow(-0.4rem 0rem 0.6rem rgba(233, 21, 21, 0.502));
+      transition: 0.3s;
+}
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-bottom: 0.6rem;
+}
+
+.photographer_section article h4 {
+    color: #D3573C;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.photographer_section article p {
+    margin: 0.3rem;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0.4rem 0.4rem 0.3rem rgba(190, 29, 29, 0.502));
+}
+
+.photographer_section article span {
+    color: rgb(97, 97, 97);
 }

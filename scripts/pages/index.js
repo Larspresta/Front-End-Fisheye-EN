@@ -1,24 +1,23 @@
 async function getPhotographers() {
     try {
-        const response = await fetch('./data/photographers.json');
-
-        if (!response.ok) {
-            throw new Error('failed to fetch: ${response.statusText}');
-        }
-        
-        const photographers = await response.json();
-        
-        console.log('fetched photographers data', photographers);
-        
-        return({
-            photographers: [photographers]
-        });
+      const response = await fetch('./data/photographers.json');
+  
+      if (!response.ok) {
+        throw new Error(`Failed to fetch data: ${response.statusText}`);
+      }
+  
+      const fetchedData  = await response.json();
+  
+      console.log('Fetched photographers data', fetchedData);
+  
+      return {
+        photographers: fetchedData.photographers
+      };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return null;
     }
-    catch (error) {
-        console.error('Error fetching data:', error);
-        return null;
-      } 
-}
+  }
 
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
