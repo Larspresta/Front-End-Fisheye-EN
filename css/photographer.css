@@ -6,6 +6,36 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+}
+
+.photograph-wrapper {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.photograph-wrapper h2 {
+    max-width: 358px;
+    font-size: 3em;
+    color: #D3573C;
+    margin: 0;
+}
+
+.photograph-wrapper h4 {
+    max-width: 358px;
+    font-size: 1.3em;
+    color: #901C1C;
+}
+
+.photograph-wrapper img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0.4rem 0.4rem 0.3rem rgba(190, 29, 29, 0.502));
 }
 
 .contact_button {
@@ -19,6 +49,16 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.like-and-price {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    right: 40px;
+    width: 300px;
+    border-radius: 15px 15px 0 0;
+    background-color: #DB8876;
 }
 
 .modal {
