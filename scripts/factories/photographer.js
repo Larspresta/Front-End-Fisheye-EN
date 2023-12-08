@@ -32,7 +32,6 @@ function photographerFactory(data) {
       article.appendChild(p);
       article.appendChild(span);
 
-
       return article;
     }
   
@@ -61,7 +60,7 @@ function photographerFactory(data) {
       infoBox.appendChild(location);
       infoBox.appendChild(p);
 
-      const contactButton = document.querySelector('.contact_button');
+      const contactButton = document.querySelector('#open-button');
       contactButton.setAttribute("aria-label", `Open contact form ${name}`);
 
       const img = document.createElement ('img')
@@ -74,13 +73,11 @@ function photographerFactory(data) {
       userCard.appendChild(img);
 
 
-      const likeAndRate = document.querySelector(".like-and-price");
-      likeAndRate.textContent = `$${price}/hour`;
+      const dailyRate = document.querySelector("#daily-rate");
+      dailyRate.textContent = `$${price}/hour`;
 
       return userCard
 
     }
     return { name, id, portrait, tagline, city, country, price, getInfocardDOM };
 }
-
-  

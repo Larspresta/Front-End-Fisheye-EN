@@ -1,7 +1,3 @@
-#contact_modal {
-    display: none;
-}
-
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -38,23 +34,40 @@
     filter: drop-shadow(0.4rem 0.4rem 0.3rem rgba(190, 29, 29, 0.502));
 }
 
-.user-works {
+.photographer-media {
     display: flex;
     flex-wrap: wrap;
+    margin: 50px 100px;
+    gap: 5.9rem;
 }
 
 .image-container {
     width: 250px;
     height: 250px;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
 }
 
-.image-container img{
+.image-container img, 
+.image-container video{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
-.contact_button {
+.media-info {
+    margin: 0px;
+    color: #901C1C;;
+}
+
+.media-info h4{
+    margin: 0.5rem;
+    color: #901C1C;;
+}
+
+.button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -68,7 +81,11 @@
 }
 
 .like-and-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
+    gap: 2rem;
     bottom: 0;
     height: 50px;
     right: 40px;
@@ -76,11 +93,17 @@
     border-radius: 15px 15px 0 0;
     background-color: #DB8876;
 }
+#contact_modal {
+    width: 600px;
+}
 
+dialog::backdrop {
+   background-color: hsla(0, 23%, 44%, 0.5);
+}
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,4 +152,9 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#message-label {
+    height: 150px;
 }

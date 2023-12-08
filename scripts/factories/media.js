@@ -1,8 +1,8 @@
 function photographerMediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
   
-    const imgVideos = `assets/photographers/${photographerId}/${video}`;
-    const images = `assets/photographers/${photographerId}/${image}`;
+    const imgVideos = `assets/images/${photographerId}/${video}`;
+    const images = `assets/images/${photographerId}/${image}`;
   
     function getUserMediaDOM() {
       const imageContainer = document.createElement('div');
@@ -24,7 +24,7 @@ function photographerMediaFactory(data) {
   
       const mediaInfo = document.createElement('div');
       mediaInfo.setAttribute('class', 'media-info');
-      const mediaName = document.createElement('h2');
+      const mediaName = document.createElement('h4');
       mediaName.textContent = `${title}`;
       mediaInfo.appendChild(mediaName);
   

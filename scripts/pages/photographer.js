@@ -8,32 +8,28 @@ async function getPhotographersMedia(){
 }
 
 async function init() {
-  const {photographers} = await getPhotographersMedia();
+  const {photographers, media} = await getPhotographersMedia();
 
   const selectedPhotographer = photographers.find(photographer => photographer.id === parseInt(paramsId, 10));
+  const selectedPhotographerMedia = media.filter(item => item.photographerId === parseInt(paramsId, 10));
 
   const photographerModel = photographerHeaderFactory(selectedPhotographer);
   const photographerDetailsDOM = photographerModel.getInfocardDOM();
   document.querySelector('.photograph-header').appendChild(photographerDetailsDOM);
-}
 
-async function initMedia() {
-  const { media } = await getPhotographersMedia();
-
-  const selectedPhotographer = media.filter(item => item.photographerId === parseInt(paramsId, 10));
-
-  if (selectedPhotographer.length > 0) {
-    selectedPhotographer.forEach(item => {
+    selectedPhotographerMedia.forEach(item => {
       const photographerModel = photographerMediaFactory(item);
       const photographerDetailsDOM = photographerModel.getUserMediaDOM();
       document.querySelector('.photographer-media').appendChild(photographerDetailsDOM);
     });
-  } else {
-    console.error(`Photographer with id ${paramsId} not found in the media list.`);
-  }
-}
+  } 
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
-  initMedia();
 });
+
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
+
+const images = document.querySelector('img')

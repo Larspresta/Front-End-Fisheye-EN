@@ -13,30 +13,37 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="open-button" class="button">Contactez-moi</button>
       </div>
       <div class="order-by"></div>
       <section class="photographer-media"></section>
     </main>
     <div class="like-and-price">
-      <div id="likes"></div>
-      <div id="price"></div>
+      <div id="likes">placeholder</div>
+      <div id="daily-rate"></div>
     </div>
-    <div id="contact_modal">
-			<div class="modal">
+    <dialog class="contact-modal" id="contact_modal">
+      <div class="modal">
 				<header>
           <h2>Contact me</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img class="close-button" src="assets/icons/close.svg"  />
         </header>
 				<form>
-					<div>
-						<label>First name</label>
-						<input />
-					</div>
-          <button class="contact_button">Send</button>
+						<label for="firstname" id="first-name-label" >First name</label>
+						<input type="text" name="firstname" role="textbox" aria-label="first name"/>
+
+						<label for="lastname" id="last-name-label" >Last name</label>
+						<input type="text" name="lastname" role="textbox" aria-label="first name"/>
+
+						<label for="email" id="email-label" >Email</label>
+						<input type="email" name="email" role="textbox" aria-label="email"/>
+
+						<label for="message" >Message</label>
+						<input type="text" id="message-label" name="message" role="textbox" aria-label="message"/>
+          <button type="submit" class="close-button button">Send</button>
 				</form>
 			</div>
-		</div>
+		</dialog>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/factories/media.js"></script>
