@@ -1,4 +1,4 @@
-const lightboxActive = document.querySelectorAll('.photographer-media');
+/* const lightboxActive = document.querySelectorAll('.photographer-media');
 const lightboxGallery = document.querySelector('.lightbox-container');
 const lightboxWrapper = document.querySelector('.lightbox-wrapper');
 const lightboxBtns = document.querySelectorAll('.lightbox-btn');
@@ -12,7 +12,7 @@ const lightboxVideo = document.createElement('video');
 lightboxWrapper.appendChild(lightboxImage);
 lightboxWrapper.appendChild(lightboxVideo);
 
-let currentMediaIndex = 0;
+let currentMediaIndex;
 
 function showImage(imageSrc) {
     lightboxImage.src = imageSrc;
@@ -20,7 +20,6 @@ function showImage(imageSrc) {
     lightboxImage.style.display = 'block';
 }
 
-// Function to show a video in the lightbox
 function showVideo(videoSrc) {
     lightboxVideo.src = videoSrc;
     lightboxImage.style.display = 'none';
@@ -47,5 +46,5 @@ lightboxActive.forEach((image, index) => {
 lightboxBtnClose.addEventListener('click', () => {
     lightboxGallery.classList.remove('active');
     lightboxVideo.pause();
-});
+}); */
 
