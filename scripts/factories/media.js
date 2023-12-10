@@ -29,13 +29,24 @@ function photographerMediaFactory(data) {
 
       const mediaName = document.createElement('h4');
 
-      const LikesBox = document.createElement('div');
-      LikesBox.setAttribute('class', 'likes-box');
-      LikesBox.ariaLabel = "likes";
+      const likesBox = document.createElement('div');
+      likesBox.setAttribute('class', 'likes-box');
+      likesBox.ariaLabel = "likes";
 
-      
+      const mediaLikeNumber = document.createElement ('span');
+      mediaLikeNumber.setAttribute('class', 'like-number');
+      mediaLikeNumber.textContent = likes;
+      likesBox.appendChild(mediaLikeNumber);
+
+      const likeHeartImg = document.createElement ('img');
+      likeHeartImg.id = 'heart-icon';
+      likeHeartImg.src = `assets/icons/heart.svg`;
+      likesBox.appendChild(likeHeartImg);
+
       mediaName.textContent = `${title}`;
+
       mediaInfo.appendChild(mediaName);
+      mediaInfo.appendChild(likesBox);
   
       imageContainer.appendChild(mediaInfo);
   
