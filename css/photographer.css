@@ -192,9 +192,7 @@ form input {
     display: grid;
     place-items: center;
     max-width: 90%;
-    max-height: 100%;
     position: relative;
-
     border-radius: 5px;
 }
 

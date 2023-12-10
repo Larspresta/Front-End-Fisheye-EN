@@ -21,13 +21,19 @@ function photographerMediaFactory(data) {
         }
         media.setAttribute ('class', 'lightbox-media');
 
-        console.log('Created media element:', media);
-        
       imageContainer.appendChild(media);
   
       const mediaInfo = document.createElement('div');
       mediaInfo.setAttribute('class', 'media-info');
+      mediaInfo.setAttribute('data-title', title);
+
       const mediaName = document.createElement('h4');
+
+      const LikesBox = document.createElement('div');
+      LikesBox.setAttribute('class', 'likes-box');
+      LikesBox.ariaLabel = "likes";
+
+      
       mediaName.textContent = `${title}`;
       mediaInfo.appendChild(mediaName);
   
