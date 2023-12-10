@@ -24,12 +24,4 @@ async function init() {
     });
   } 
 
-document.addEventListener('DOMContentLoaded', () => {
   init();
-});
-
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
-
-const images = document.querySelector('img')
