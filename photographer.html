@@ -22,6 +22,21 @@
       <div id="likes">placeholder</div>
       <div id="daily-rate"></div>
     </div>
+    <div class='lightbox-container'>
+      <div class='lightbox-wrapper'>
+        <button class="lightbox-btn left" id="left">
+          <img src="/assets/icons/left-arrow.svg" aria-label="previous picture" >
+        </button>
+
+        <button class="lightbox-btn right" id="right">  
+          <img src="/assets/icons/right-arrow.svg" aria-label="next picture" >
+        </button>
+
+        <button class="lightbox-btn lightbox-btn-close" id="close">
+          <img src="/assets/icons/close.svg" aria-label="close lightbox" >
+        </button>
+       </div> 
+      </div>
     <dialog class="contact-modal" id="contact_modal">
       <div class="modal">
 				<header>
@@ -48,5 +63,6 @@
     <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/factories/media.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/lightbox.js"></script>
   </body>
 </html>

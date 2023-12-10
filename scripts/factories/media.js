@@ -9,17 +9,20 @@ function photographerMediaFactory(data) {
       imageContainer.setAttribute('class', 'image-container');
   
       let media;
-  
+      
       if (image !== undefined) {
-        media = document.createElement('img');
-        media.setAttribute('src', images);
-        media.setAttribute('alt', title);
-      } else if (video !== undefined) {
-        media = document.createElement('video');
-        media.setAttribute('src', imgVideos);
-        media.setAttribute('alt', title);
-      }
-  
+          media = document.createElement('img');
+          media.setAttribute('src', images);
+          media.setAttribute('alt', title);
+        } else if (video !== undefined) {
+            media = document.createElement('video');
+            media.setAttribute('src', imgVideos);
+            media.setAttribute('alt', title);
+        }
+        media.setAttribute ('class', 'lightbox-media');
+
+        console.log('Created media element:', media);
+        
       imageContainer.appendChild(media);
   
       const mediaInfo = document.createElement('div');

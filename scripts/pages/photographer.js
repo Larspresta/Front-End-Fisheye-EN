@@ -7,11 +7,13 @@ async function getPhotographersMedia(){
   return fetch ("data/photographers.json").then((response) => response.json());
 }
 
+let selectedPhotographerMedia;
+
 async function init() {
   const {photographers, media} = await getPhotographersMedia();
-
+  
   const selectedPhotographer = photographers.find(photographer => photographer.id === parseInt(paramsId, 10));
-  const selectedPhotographerMedia = media.filter(item => item.photographerId === parseInt(paramsId, 10));
+  selectedPhotographerMedia = media.filter(item => item.photographerId === parseInt(paramsId, 10));
 
   const photographerModel = photographerHeaderFactory(selectedPhotographer);
   const photographerDetailsDOM = photographerModel.getInfocardDOM();
@@ -22,6 +24,6 @@ async function init() {
       const photographerDetailsDOM = photographerModel.getUserMediaDOM();
       document.querySelector('.photographer-media').appendChild(photographerDetailsDOM);
     });
-  } 
+  };
 
   init();
