@@ -14,7 +14,6 @@ async function getTotalLikesPhotographerID(photographerId) {
   
       console.log(`Total Likes for photographerId ${photographerId}:`, totalLikes);
   
-      // Update the LikesCounter element with the total likes
       const LikesCounter = document.querySelector('#likes');
       LikesCounter.textContent = totalLikes;
   
@@ -25,19 +24,6 @@ async function getTotalLikesPhotographerID(photographerId) {
     }
   }
   
-  // Example usage
-  if (paramsId) {
-    getTotalLikesPhotographerID(paramsId)
-      .then(totalLikes => {
-        // Do something with the totalLikes if needed
-      })
-      .catch(error => {
-        // Handle errors here
-      });
-  } else {
-    console.error('PhotographerId not found in the URL parameters.');
-  }
-
   function likeMedia(e) {
     const target = e.currentTarget;
     if (target.classList.contains('not-liked')) {
