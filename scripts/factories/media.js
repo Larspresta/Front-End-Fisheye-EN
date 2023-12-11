@@ -30,16 +30,18 @@ function photographerMediaFactory(data) {
       const mediaName = document.createElement('h4');
 
       const likesBox = document.createElement('div');
-      likesBox.setAttribute('class', 'likes-box');
+      likesBox.setAttribute('class', 'likes-box not-liked');
       likesBox.ariaLabel = "likes";
+      likesBox.setAttribute("onclick", "likeMedia(event)");
+      likesBox.setAttribute("role", "button");
 
       const mediaLikeNumber = document.createElement ('span');
-      mediaLikeNumber.setAttribute('class', 'like-number');
+      mediaLikeNumber.setAttribute('class', 'like-tally');
       mediaLikeNumber.textContent = likes;
       likesBox.appendChild(mediaLikeNumber);
 
       const likeHeartImg = document.createElement ('img');
-      likeHeartImg.id = 'heart-icon';
+      likeHeartImg.className = 'heart-icon';
       likeHeartImg.src = `assets/icons/heart.svg`;
       likesBox.appendChild(likeHeartImg);
 

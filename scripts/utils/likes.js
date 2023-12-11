@@ -1,0 +1,51 @@
+let totalLikes = 0;
+async function getTotalLikesPhotographerID(photographerId) {
+    try {
+      const response = await fetch("data/photographers.json");
+      const jsonData = await response.json();
+  
+      const targetPhotographerId = Number(photographerId);
+  
+      jsonData.media.forEach(item => {
+        if (item.photographerId === targetPhotographerId) {
+          totalLikes += item.likes;
+        }
+      });
+  
+      console.log(`Total Likes for photographerId ${photographerId}:`, totalLikes);
+  
+      // Update the LikesCounter element with the total likes
+      const LikesCounter = document.querySelector('#likes');
+      LikesCounter.textContent = totalLikes;
+  
+      return totalLikes;
+    } catch (error) {
+      console.error('Error fetching or parsing JSON:', error);
+      throw error;
+    }
+  }
+  
+  // Example usage
+  if (paramsId) {
+    getTotalLikesPhotographerID(paramsId)
+      .then(totalLikes => {
+        // Do something with the totalLikes if needed
+      })
+      .catch(error => {
+        // Handle errors here
+      });
+  } else {
+    console.error('PhotographerId not found in the URL parameters.');
+  }
+
+  function likeMedia(e) {
+    const target = e.currentTarget;
+    if (target.classList.contains('not-liked')) {
+      target.classList.add('liked');
+      target.classList.remove('not-liked');
+      target.querySelector(".like-tally").textContent = parseInt(target.textContent) + 1;
+      totalLikes += 1;
+      getTotalLikesPhotographerID();
+    }
+  }
+
