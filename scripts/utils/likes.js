@@ -24,6 +24,16 @@ async function getTotalLikesPhotographerID(photographerId) {
     }
   }
   
+  if (paramsId) {
+    getTotalLikesPhotographerID(paramsId)
+      .then(totalLikes => {
+      })
+      .catch(error => {
+      });
+  } else {
+    console.error('PhotographerId not found in the URL parameters.');
+  }
+
   function likeMedia(e) {
     const target = e.currentTarget;
     if (target.classList.contains('not-liked')) {
