@@ -2,4 +2,5 @@
 
 ## Project set-up
 
-Nothing to install, just open `index.html`.
+Live site of the completed project:
+https://larspresta.github.io/Front-End-Fisheye-EN/index.html
