@@ -6,6 +6,7 @@ function photographerMediaFactory(data) {
   
     function getUserMediaDOM() {
       const imageContainer = document.createElement('div');
+      imageContainer.setAttribute('data-id', id);
       imageContainer.setAttribute('class', 'image-container');
   
       let media;
@@ -26,6 +27,7 @@ function photographerMediaFactory(data) {
       const mediaInfo = document.createElement('div');
       mediaInfo.setAttribute('class', 'media-info');
       mediaInfo.setAttribute('data-title', title);
+      mediaInfo.setAttribute('data-date', date)
 
       const mediaName = document.createElement('h4');
 

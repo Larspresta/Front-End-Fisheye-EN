@@ -27,8 +27,10 @@ async function getTotalLikesPhotographerID(photographerId) {
   if (paramsId) {
     getTotalLikesPhotographerID(paramsId)
       .then(totalLikes => {
+        console.log(`Total likes for photographer ID ${paramsId}: ${totalLikes}`);
       })
       .catch(error => {
+        console.error(`Error could not get likes: ${error.message}`);
       });
   } else {
     console.error('PhotographerId not found in the URL parameters.');

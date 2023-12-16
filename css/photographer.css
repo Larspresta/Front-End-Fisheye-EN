@@ -11,7 +11,7 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 0 0 50px 100px;
     display: flex;
 }
 
@@ -275,4 +275,26 @@ form input {
 
 .liked img{
     filter: saturate(3) drop-shadow(0rem 0rem 0.3rem rgba(190, 29, 29, 0.502));
+}
+
+label {
+    margin: 0 100px
+}
+
+#select-menu {
+    position: relative;
+    min-width: 180px;
+    height: 60px;
+    border: none;
+    color: white;
+    background-color: var(--primary);
+    font-size: 1.3rem;
+    border-radius: 5px;
+}
+
+.option-box {
+    color: white;
+    background-color: var(--primary);
+    font-size: 1.2rem;
+    padding: 1rem;
 }
