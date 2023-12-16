@@ -1,83 +1,80 @@
 function photographerFactory(data) {
-    const { name, id, portrait, tagline, city, country, price } = data;
-  
-    const picture = `assets/photographers/${portrait}`;
-  
-    function getUserCardDOM() {
-      const article = document.createElement('article');
-      const img = document.createElement('img');
+  const {name, id, portrait, tagline, city, country, price} = data;
 
-      img.setAttribute('src', picture);
+  const picture = `assets/photographers/${portrait}`;
 
-      const link = document.createElement('a');
-      link.setAttribute('href', `photographer.html?id=${id}`);
+  function getUserCardDOM() {
+    const article = document.createElement('article');
+    const img = document.createElement('img');
 
-      const h2 = document.createElement('h2');
-      h2.textContent = name;
+    img.setAttribute('src', picture);
 
-      const location = document.createElement('h4');
-      location.textContent = `${city}, ${country}`;
+    const link = document.createElement('a');
+    link.setAttribute('href', `photographer.html?id=${id}`);
 
-      const p = document.createElement('p');
-      p.textContent = `${tagline}`;
+    const h2 = document.createElement('h2');
+    h2.textContent = name;
 
-      const span = document.createElement('span');
-      span.textContent = `$${price}/hour`;
+    const location = document.createElement('h4');
+    location.textContent = `${city}, ${country}`;
 
-      link.appendChild(img);
-      link.appendChild(h2);
+    const p = document.createElement('p');
+    p.textContent = `${tagline}`;
 
-      article.appendChild(link);
-      article.appendChild(location);
-      article.appendChild(p);
-      article.appendChild(span);
+    const span = document.createElement('span');
+    span.textContent = `$${price}/hour`;
 
-      return article;
-    }
-  
-    return { name, id, portrait, tagline, city, country, price, getUserCardDOM };
+    link.appendChild(img);
+    link.appendChild(h2);
+
+    article.appendChild(link);
+    article.appendChild(location);
+    article.appendChild(p);
+    article.appendChild(span);
+
+    return article;
   }
 
-  function photographerHeaderFactory(data) {
-    const { name, id, portrait, tagline, city, country, price } = data;
-  
-    const picture = `assets/photographers/${portrait}`;
-  
-    function getInfocardDOM() {
-      const userCard = document.createElement('div');
-      userCard.setAttribute ('class', 'photograph-wrapper')
-      const h2 = document.createElement('h2');
-      h2.textContent = name;
+  return {name, id, portrait, tagline, city, country, price, getUserCardDOM};
+}
 
-      const location = document.createElement('h4');
-      location.textContent = `${city}, ${country}`;
+function photographerHeaderFactory(data) {
+  const {name, id, portrait, tagline, city, country, price} = data;
 
-      const p = document.createElement('p');
-      p.textContent = `${tagline}`;
+  const picture = `assets/photographers/${portrait}`;
 
-      const infoBox = document.createElement('div');
-      infoBox.appendChild(h2);
-      infoBox.appendChild(location);
-      infoBox.appendChild(p);
+  function getInfocardDOM() {
+    const userCard = document.createElement('div');
+    userCard.setAttribute('class', 'photograph-wrapper');
+    const h2 = document.createElement('h2');
+    h2.textContent = name;
 
-      const contactButton = document.querySelector('#open-button');
-      contactButton.setAttribute("aria-label", `Open contact form ${name}`);
+    const location = document.createElement('h4');
+    location.textContent = `${city}, ${country}`;
 
-      const img = document.createElement ('img')
-      img.setAttribute("src", picture);
-      img.setAttribute("alt", name);
-    
+    const p = document.createElement('p');
+    p.textContent = `${tagline}`;
 
-      userCard.appendChild(infoBox);
-      userCard.appendChild(contactButton);
-      userCard.appendChild(img);
+    const infoBox = document.createElement('div');
+    infoBox.appendChild(h2);
+    infoBox.appendChild(location);
+    infoBox.appendChild(p);
 
+    const contactButton = document.querySelector('#open-button');
+    contactButton.setAttribute('aria-label', `Open contact form ${name}`);
 
-      const dailyRate = document.querySelector("#daily-rate");
-      dailyRate.textContent = `$${price}/hour`;
+    const img = document.createElement('img');
+    img.setAttribute('src', picture);
+    img.setAttribute('alt', name);
 
-      return userCard
+    userCard.appendChild(infoBox);
+    userCard.appendChild(contactButton);
+    userCard.appendChild(img);
 
-    }
-    return { name, id, portrait, tagline, city, country, price, getInfocardDOM };
+    const dailyRate = document.querySelector('#daily-rate');
+    dailyRate.textContent = `$${price}/hour`;
+
+    return userCard;
+  }
+  return {name, id, portrait, tagline, city, country, price, getInfocardDOM};
 }

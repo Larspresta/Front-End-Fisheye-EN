@@ -47,4 +47,3 @@ lightboxBtnClose.addEventListener('click', () => {
     lightboxGallery.classList.remove('active');
     lightboxVideo.pause();
 }); */
-
