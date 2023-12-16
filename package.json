@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-strongloop": "^2.1.0"
+  }
+}
+{
+  ...
+  "scripts": {
+      "pretest": "eslint --ignore-path .gitignore ."
+  }
+  ...
+}
